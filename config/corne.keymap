@@ -184,10 +184,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&caps_word  &kp Q  &kp W  &kp F    &kp P        &kp B         &kp J    &kp L            &kp U      &kp Y    &kp APOS  &trans
-&kp LSHFT   &kp A  &kp R  &kp S    &kp T        &kp G         &kp M    &kp N            &kp E      &kp I    &kp O     &kp SEMI
-&kp LCTRL   &kp Z  &kp X  &kp C    &kp D        &kp V         &kp K    &kp H            &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                          &kp TAB  &lt 1 SPACE  &kp ESCAPE    &kp RET  &lt 2 BACKSPACE  &kp DEL
+&caps_word  &kp Q              &kp W               &kp F           &kp P               &kp B      &kp J    &kp L                &kp U                &kp Y                  &kp APOS              &trans
+&kp LSHFT   &kp A              &kp R               &kp S           &kp T               &kp G      &kp M    &kp N                &kp E                &kp I                  &kp O                 &kp SEMI
+&kp LCTRL   &hm Z RIGHT_SHIFT  &hm X LEFT_CONTROL  &hm C LEFT_ALT  &hm D LEFT_COMMAND  &kp V      &kp K    &hm H RIGHT_COMMAND  &hm COMMA RIGHT_ALT  &hm DOT RIGHT_CONTROL  &hm FSLH RIGHT_SHIFT  &to 5
+                                                   &kp ESCAPE      &lt 1 SPACE         &kp TAB    &kp RET  &lt 2 BACKSPACE      &kp DEL
             >;
         };
 
@@ -248,10 +248,10 @@
         qwerty {
             display-name = "fallback";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E    &kp R  &kp T         &kp Y    &kp U            &kp I      &kp O    &kp P     &kp BACKSPACE
-&kp LSHFT  &kp A  &kp S  &kp D    &kp F  &kp G         &kp H    &kp J            &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C    &kp V  &kp B         &kp N    &kp M            &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                         &kp TAB  &mo 1  &kp ESCAPE    &kp RET  &lt 2 BACKSPACE  &kp DEL
+&kp TAB    &kp Q  &kp W  &kp E       &kp R  &kp T      &kp Y    &kp U            &kp I      &kp O    &kp P     &kp BACKSPACE
+&kp LSHFT  &kp A  &kp S  &kp D       &kp F  &kp G      &kp H    &kp J            &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z  &kp X  &kp C       &kp V  &kp B      &kp N    &kp M            &kp COMMA  &kp DOT  &kp FSLH  &to 0
+                         &kp ESCAPE  &mo 1  &kp TAB    &kp RET  &lt 2 BACKSPACE  &kp DEL
             >;
         };
     };

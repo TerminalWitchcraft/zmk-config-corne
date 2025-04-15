@@ -184,9 +184,9 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&caps_word  &kp Q              &kp W               &kp F           &kp P               &kp B      &kp J    &kp L                &kp U                &kp Y                  &kp APOS              &trans
-&kp LSHFT   &kp A              &kp R               &kp S           &kp T               &kp G      &kp M    &kp N                &kp E                &kp I                  &kp O                 &kp SEMI
-&kp LCTRL   &hm Z RIGHT_SHIFT  &hm X LEFT_CONTROL  &hm C LEFT_ALT  &hm D LEFT_COMMAND  &kp V      &kp K    &hm H RIGHT_COMMAND  &hm COMMA RIGHT_ALT  &hm DOT RIGHT_CONTROL  &hm FSLH RIGHT_SHIFT  &to 5
+&caps_word  &kp W              &kp L               &kp Y           &kp P               &kp B      &kp Z    &kp F                &kp O                &kp U                    &kp APOS                &caps_word
+&kp LSHFT   &kp C              &kp R               &kp S           &kp T               &kp G      &kp M    &kp N                &kp E                &kp I                    &kp A                   &kp SEMI
+&kp LCTRL   &hm Q RIGHT_SHIFT  &hm J LEFT_CONTROL  &hm V LEFT_ALT  &hm D LEFT_COMMAND  &kp K      &kp X    &hm H RIGHT_COMMAND  &hm SLASH RIGHT_ALT  &hm COMMA RIGHT_CONTROL  &hm PERIOD RIGHT_SHIFT  &to 5
                                                    &kp ESCAPE      &lt 1 SPACE         &kp TAB    &kp RET  &lt 2 BACKSPACE      &kp DEL
             >;
         };

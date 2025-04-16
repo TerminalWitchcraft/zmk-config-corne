@@ -116,7 +116,7 @@
 
             bindings = <
 &none  &kp W                &kp L            &kp Y                &kp P              &kp B        &kp Z        &kp F               &kp O                 &kp U             &kp APOS              &none
-&caps  &hml LEFT_CONTROL C  &hml LEFT_ALT R  &hml LEFT_COMMAND R  &hml LEFT_SHIFT T  &kp G        &kp M        &hmr RIGHT_SHIFT N  &hmr RIGHT_COMMAND E  &hmr RIGHT_ALT I  &hmr RIGHT_CONTROL A  &caps
+&caps  &hml LEFT_CONTROL C  &hml LEFT_ALT R  &hml LEFT_COMMAND S  &hml LEFT_SHIFT T  &kp G        &kp M        &hmr RIGHT_SHIFT N  &hmr RIGHT_COMMAND E  &hmr RIGHT_ALT I  &hmr RIGHT_CONTROL A  &caps
 &mo 6  &kp Q                &kp J            &kp V                &kp D              &kp K        &kp X        &kp H               &kp SLASH             &kp COMMA         &kp PERIOD            &to 7
                                              &kp ESCAPE           &lt 3 SPACE        &lt 1 TAB    &lt 4 ENTER  &lt 2 BACKSPACE     &lt 5 DELETE
             >;

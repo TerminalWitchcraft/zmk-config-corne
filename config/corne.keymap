@@ -105,7 +105,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        DEF {
+        Base {
             display-name = "Base";
 
             // -----------------------------------------------------------------------------------------
@@ -115,10 +115,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&caps_word  &kp W                &kp L            &kp Y                &kp P              &kp B      &kp Z    &kp F               &kp O                 &kp U             &kp APOS              &caps_word
-&kp LSHFT   &hml LEFT_CONTROL C  &hml LEFT_ALT R  &hml LEFT_COMMAND R  &hml LEFT_SHIFT T  &kp G      &kp M    &hmr RIGHT_SHIFT N  &hmr RIGHT_COMMAND E  &hmr RIGHT_ALT I  &hmr RIGHT_CONTROL A  &kp SEMI
-&mo 4       &kp Q                &kp J            &kp V                &kp D              &kp K      &kp X    &kp H               &kp SLASH             &kp COMMA         &kp PERIOD            &to 5
-                                                  &kp ESCAPE           &lt 1 SPACE        &kp TAB    &kp RET  &lt 2 BACKSPACE     &kp DEL
+&none  &kp W                &kp L            &kp Y                &kp P              &kp B        &kp Z        &kp F               &kp O                 &kp U             &kp APOS              &none
+&caps  &hml LEFT_CONTROL C  &hml LEFT_ALT R  &hml LEFT_COMMAND R  &hml LEFT_SHIFT T  &kp G        &kp M        &hmr RIGHT_SHIFT N  &hmr RIGHT_COMMAND E  &hmr RIGHT_ALT I  &hmr RIGHT_CONTROL A  &caps
+&mo 6  &kp Q                &kp J            &kp V                &kp D              &kp K        &kp X        &kp H               &kp SLASH             &kp COMMA         &kp PERIOD            &to 7
+                                             &kp ESCAPE           &lt 3 SPACE        &lt 1 TAB    &lt 4 ENTER  &lt 2 BACKSPACE     &lt 5 DELETE
             >;
         };
 
@@ -132,15 +132,15 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&trans      &trans         &trans        &trans            &trans          &trans    &kp K_REDO  &kp K_PASTE     &kp K_COPY     &kp K_CUT     &kp K_UNDO  &trans
-&caps_word  &kp LEFT_META  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans    &kp CAPS    &kp LEFT_ARROW  &kp DOWN       &kp UP_ARROW  &kp RIGHT   &trans
-&trans      &trans         &trans        &trans            &trans          &trans    &kp INSERT  &kp HOME        &kp PAGE_DOWN  &kp PAGE_UP   &kp END     &trans
-                                         &trans            &trans          &trans    &trans      &trans          &trans
+&trans  &trans            &trans        &trans            &trans          &trans    &kp K_REDO  &kp K_PASTE     &kp LC(N)      &kp LC(P)     &kp K_UNDO  &trans
+&trans  &sk LEFT_CONTROL  &sk LEFT_ALT  &sk LEFT_COMMAND  &sk LEFT_SHIFT  &trans    &kp K_COPY  &kp LEFT_ARROW  &kp DOWN       &kp UP_ARROW  &kp RIGHT   &trans
+&trans  &trans            &trans        &trans            &trans          &trans    &kp INSERT  &kp HOME        &kp PAGE_DOWN  &kp PAGE_UP   &kp END     &trans
+                                        &trans            &trans          &trans    &trans      &trans          &trans
             >;
         };
 
-        SYM {
-            display-name = "Symbols";
+        SYM_LEFT {
+            display-name = "sym_left";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
@@ -149,11 +149,33 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TILDE        &kp CARET      &kp LEFT_BRACKET      &kp MINUS       &kp RIGHT_BRACKET      &kp HASH            &kp PERCENT      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans         &trans
-&kp EXCLAMATION  &kp LESS_THAN  &kp LEFT_PARENTHESIS  &kp EQUAL       &kp RIGHT_PARENTHESIS  &kp GREATER_THAN    &kp PLUS         &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp GRAVE      &kp COLON
-&kp AT_SIGN      &kp DOLLAR     &kp LEFT_BRACE        &kp UNDERSCORE  &kp RIGHT_BRACE        &kp ASTERISK        &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp BACKSLASH  &trans
-                                                      &trans          &trans                 &trans              &trans           &trans           &trans
+&trans  &trans         &kp LEFT_BRACKET      &kp MINUS       &kp RIGHT_BRACKET      &kp BACKSLASH       &trans  &trans     &trans    &trans    &trans     &trans
+&trans  &kp LESS_THAN  &kp LEFT_PARENTHESIS  &kp EQUAL       &kp RIGHT_PARENTHESIS  &kp GREATER_THAN    &trans  &sk LSHFT  &sk LGUI  &sk LALT  &sk LCTRL  &trans
+&trans  &trans         &kp LEFT_BRACE        &kp UNDERSCORE  &kp RIGHT_BRACE        &kp PLUS            &trans  &trans     &trans    &trans    &trans     &trans
+                                             &trans          &trans                 &trans              &trans  &trans     &trans
             >;
+        };
+
+        SYM_RIGHT {
+            bindings = <
+&trans  &trans     &trans    &trans    &trans     &trans    &kp PERCENT      &kp GRAVE    &kp CARET     &kp DOLLAR  &trans         &trans
+&trans  &sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &trans    &kp AMPERSAND    &kp AT_SIGN  &kp ASTERISK  &kp POUND   &kp SEMICOLON  &trans
+&trans  &trans     &trans    &trans    &trans     &trans    &kp EXCLAMATION  &kp COLON    &kp TILDE     &kp PIPE    &trans         &trans
+                             &trans    &trans     &trans    &trans           &trans       &trans
+            >;
+
+            label = "sym_right";
+        };
+
+        NUM {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp N4  &kp N3  &kp N2  &kp N1  &kp N5    &kp N0  &kp N6  &kp N7  &kp N8  &kp N9  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+
+            label = "num";
         };
 
         ADJ {
@@ -192,7 +214,7 @@
 
         l3 {
             if-layers = <1 2>;
-            then-layer = <3>;
+            then-layer = <5>;
         };
     };
 };

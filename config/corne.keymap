@@ -115,10 +115,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&none  &kp W                &kp L            &kp Y                &kp P              &kp B           &kp Z        &kp F               &kp O                 &kp U             &kp APOS              &none
-&caps  &hml LEFT_CONTROL C  &hml LEFT_ALT R  &hml LEFT_COMMAND S  &hml LEFT_SHIFT T  &kp G           &kp M        &hmr RIGHT_SHIFT N  &hmr RIGHT_COMMAND E  &hmr RIGHT_ALT I  &hmr RIGHT_CONTROL A  &caps
-&mo 6  &kp Q                &kp J            &kp V                &kp D              &kp K           &kp X        &kp H               &kp SLASH             &kp COMMA         &kp PERIOD            &to 7
-                                             &kp TAB              &lt 3 SPACE        &lt 1 ESCAPE    &lt 4 ENTER  &lt 2 BACKSPACE     &lt 5 DELETE
+&kp K_MUTE  &kp W                &kp L            &kp Y                &kp P              &kp B          &kp Z        &kp F               &kp O                 &kp U             &kp APOS              &kp C_VOLUME_UP
+&caps       &hml LEFT_CONTROL C  &hml LEFT_ALT R  &hml LEFT_COMMAND S  &hml LEFT_SHIFT T  &kp G          &kp M        &hmr RIGHT_SHIFT N  &hmr RIGHT_COMMAND E  &hmr RIGHT_ALT I  &hmr RIGHT_CONTROL A  &kp C_VOLUME_DOWN
+&mo 6       &kp Q                &kp J            &kp V                &kp D              &kp K          &kp X        &kp H               &kp SLASH             &kp COMMA         &kp PERIOD            &to 5
+                                                  &kp TAB              &lt 3 ESCAPE       &lt 1 SPACE    &lt 4 ENTER  &lt 2 BACKSPACE     &kp LS(TAB)
             >;
         };
 
@@ -169,33 +169,13 @@
 
         NUM {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp N4  &kp N3  &kp N2  &kp N1  &kp N5    &kp N0  &kp N6  &kp N7  &kp N8  &kp N9  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &kp N7  &kp N8  &kp N9  &trans    &trans  &trans           &trans             &trans         &trans             &trans
+&trans  &trans  &kp N4  &kp N5  &kp N6  &trans    &trans  &sk RIGHT_SHIFT  &sk RIGHT_COMMAND  &sk RIGHT_ALT  &sk RIGHT_CONTROL  &trans
+&trans  &trans  &kp N1  &kp N2  &kp N3  &kp N0    &trans  &trans           &trans             &trans         &trans             &trans
+                        &trans  &trans  &trans    &trans  &trans           &trans
             >;
 
             label = "num";
-        };
-
-        ADJ {
-            display-name = "System";
-            bindings = <
-&trans  &kp F1        &kp F2        &kp F3        &kp F4      &kp F5            &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &trans
-&trans  &kp F11       &kp F12       &trans        &trans      &studio_unlock    &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &bt BT_CLR_ALL    &trans  &trans  &trans  &trans  &bootloader  &trans
-                                    &trans        &trans      &trans            &trans  &trans  &trans
-            >;
-        };
-
-        EXTRA {
-            display-name = "extra";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &bootloader  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
         };
 
         qwerty {
@@ -207,6 +187,16 @@
                          &kp TAB  &mo 1  &kp ESCAPE    &kp RET  &lt 2 BACKSPACE  &kp DEL
             >;
         };
+
+        SYS {
+            display-name = "System";
+            bindings = <
+&trans  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5            &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &trans
+&trans  &kp F11       &kp F12       &trans        &trans        &studio_unlock    &trans  &trans  &trans  &trans  &trans       &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 4  &bt BT_CLR_ALL    &trans  &trans  &trans  &trans  &bootloader  &trans
+                                    &trans        &trans        &trans            &trans  &trans  &trans
+            >;
+        };
     };
 
     conditional_layers {
@@ -214,7 +204,7 @@
 
         l3 {
             if-layers = <1 2>;
-            then-layer = <5>;
+            then-layer = <6>;
         };
     };
 };

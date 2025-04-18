@@ -96,6 +96,16 @@
             hold-trigger-on-release;
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
         };
+
+        sk_lazy: sk_lazy {
+            compatible = "zmk,behavior-sticky-key";
+            label = "SK_LAZY";
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            release-after-ms = <200>;
+            lazy;
+            quick-release;
+        };
     };
 
     macros {
@@ -183,10 +193,10 @@
 
         NUM {
             bindings = <
-&trans  &trans  &kp N7  &kp N8  &kp N9  &trans    &trans  &trans           &trans             &trans         &trans             &trans
-&trans  &trans  &kp N4  &kp N5  &kp N6  &trans    &trans  &sk RIGHT_SHIFT  &sk RIGHT_COMMAND  &sk RIGHT_ALT  &sk RIGHT_CONTROL  &trans
-&trans  &trans  &kp N1  &kp N2  &kp N3  &kp N0    &trans  &trans           &trans             &trans         &trans             &trans
-                        &trans  &trans  &trans    &trans  &trans           &trans
+&trans  &trans  &sk_lazy N7  &sk_lazy N8  &sk_lazy N9  &trans         &trans  &trans           &trans             &trans         &trans             &trans
+&trans  &trans  &sk_lazy N4  &sk_lazy N5  &sk_lazy N6  &trans         &trans  &sk RIGHT_SHIFT  &sk RIGHT_COMMAND  &sk RIGHT_ALT  &sk RIGHT_CONTROL  &trans
+&trans  &trans  &sk_lazy N1  &sk_lazy N2  &sk_lazy N3  &sk_lazy N0    &trans  &trans           &trans             &trans         &trans             &trans
+                             &trans       &trans       &trans         &trans  &trans           &trans
             >;
 
             label = "num";

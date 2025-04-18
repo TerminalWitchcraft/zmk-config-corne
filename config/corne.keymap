@@ -129,10 +129,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp K_MUTE  &kp W                &kp L            &kp Y                &kp P              &kp B          &kp Z        &kp F                    &kp O                 &kp U             &kp APOS              &kp C_VOLUME_UP
-&caps       &hml LEFT_CONTROL C  &hml LEFT_ALT R  &hml LEFT_COMMAND S  &hml LEFT_SHIFT T  &kp G          &kp M        &hmr RIGHT_SHIFT N       &hmr RIGHT_COMMAND E  &hmr RIGHT_ALT I  &hmr RIGHT_CONTROL A  &kp C_VOLUME_DOWN
-&mo 6       &kp Q                &kp J            &kp V                &kp D              &kp K          &kp X        &kp H                    &kp SLASH             &kp COMMA         &kp PERIOD            &to 5
-                                                  &kp TAB              &lt 3 ESCAPE       &lt 1 SPACE    &lt 4 ENTER  &lt_bkspace 2 BACKSPACE  &kp LS(TAB)
+&kp K_MUTE  &kp SQT              &kp U            &kp O                &kp F              &kp Z          &kp B        &kp P                 &kp Y                 &kp L             &kp W                 &kp C_VOLUME_UP
+&caps       &hml LEFT_CONTROL A  &hml LEFT_ALT I  &hml LEFT_COMMAND E  &hml LEFT_SHIFT N  &kp M          &kp G        &hmr RIGHT_SHIFT T    &hmr RIGHT_COMMAND S  &hmr RIGHT_ALT R  &hmr RIGHT_CONTROL C  &kp C_VOLUME_DOWN
+&mo 6       &kp PERIOD           &kp COMMA        &kp SLASH            &kp H              &kp X          &kp K        &kp D                 &kp V                 &kp J             &kp Q                 &to 5
+                                                  &kp TAB              &lt 3 BACKSPACE    &lt 1 ENTER    &lt 4 SPACE  &lt_bkspace 2 ESCAPE  &kp LS(TAB)
             >;
         };
 

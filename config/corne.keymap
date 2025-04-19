@@ -86,14 +86,12 @@
         lt_bkspace: lt_bkspace {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_BKSPACE";
-            bindings = <&lt>, <&kp>;
+            bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            require-prior-idle-ms = <150>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <250>;
-            quick-tap-ms = <125>;
-            hold-trigger-on-release;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <150>;
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
         };
 

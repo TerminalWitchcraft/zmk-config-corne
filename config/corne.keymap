@@ -89,6 +89,7 @@
             #binding-cells = <1>;
             quick-release;
             release-after-ms = <280>;
+            ignore-modifiers;
         };
 
         shift_tab: shift_tab {
@@ -148,10 +149,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp K_MUTE  &kp W  &kp L                &kp Y                      &kp P                &kp B           &kp Z        &kp F                    &kp O                   &kp U                 &kp SQT        &kp C_VOLUME_UP
-&caps       &kp C  &hml LEFT_CONTROL R  &hml LEFT_ALT S            &hml LEFT_COMMAND T  &kp G           &kp M        &hmr RIGHT_META N        &hmr RIGHT_ALT E        &hmr RIGHT_CONTROL I  &kp A          &kp C_VOLUME_DOWN
-&mo 4       &kp Q  &kp J                &kp V                      &kp D                &kp K           &kp X        &kp H                    &kp PERIOD              &kp COMMA             &kp SEMICOLON  &to 3
-                                        &shift_tab LEFT_SHIFT TAB  &lt 1 SPACE          &lt 2 ESCAPE    &lt 2 ENTER  &lt_bkspace 1 BACKSPACE  &sk_custom RIGHT_SHIFT
+&kp K_MUTE  &kp W  &kp L                &kp Y            &kp P                &kp B           &kp Z        &kp F                    &kp O                   &kp U                 &kp SQT        &kp C_VOLUME_UP
+&caps       &kp C  &hml LEFT_CONTROL R  &hml LEFT_ALT S  &hml LEFT_COMMAND T  &kp G           &kp M        &hmr RIGHT_META N        &hmr RIGHT_ALT E        &hmr RIGHT_CONTROL I  &kp A          &kp C_VOLUME_DOWN
+&mo 4       &kp Q  &kp J                &kp V            &kp D                &kp K           &kp X        &kp H                    &kp PERIOD              &kp COMMA             &kp SEMICOLON  &to 3
+                                        &kp TAB          &lt 1 SPACE          &lt 2 ESCAPE    &lt 2 ENTER  &lt_bkspace 1 BACKSPACE  &sk_custom RIGHT_SHIFT
             >;
         };
 

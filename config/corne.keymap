@@ -347,10 +347,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp K_MUTE  &kp W  &kp L                &kp Y            &kp P            &kp B            &kp Z        &kp F                                  &kp O             &kp U                 &kp SQT          &kp C_VOLUME_UP
-&caps       &kp C  &hml LEFT_CONTROL R  &hml LEFT_ALT S  &hml LEFT_GUI T  &kp G            &kp M        &hmr RIGHT_META N                      &hmr RIGHT_ALT E  &hmr RIGHT_CONTROL I  &kp A            &kp C_VOLUME_DOWN
-&mo 4       &kp Q  &kp J                &kp V            &kp D            &kp K            &kp X        &kp H                                  &dot_colon        &comma_semi           &question_grave  &to 3
-                                        &kp TAB          &lt 1 SPACE      &escape_hatch    &lt 2 ENTER  &sticky_shift RIGHT_SHIFT RIGHT_SHIFT  &kp BACKSPACE
+&kp K_MUTE  &kp W  &kp L                &kp Y            &kp P            &kp B            &kp Z        &kp F              &kp O                                  &kp U                 &kp SQT          &kp C_VOLUME_UP
+&caps       &kp C  &hml LEFT_CONTROL R  &hml LEFT_ALT S  &hml LEFT_GUI T  &kp G            &kp M        &hmr RIGHT_META N  &hmr RIGHT_ALT E                       &hmr RIGHT_CONTROL I  &kp A            &kp C_VOLUME_DOWN
+&mo 4       &kp Q  &kp J                &kp V            &kp D            &kp K            &kp X        &kp H              &dot_colon                             &comma_semi           &question_grave  &to 3
+                                        &kp TAB          &lt 1 SPACE      &escape_hatch    &lt 2 ENTER  &kp BACKSPACE      &sticky_shift RIGHT_SHIFT RIGHT_SHIFT
             >;
         };
 

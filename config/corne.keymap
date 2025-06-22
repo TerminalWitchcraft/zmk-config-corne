@@ -131,6 +131,24 @@
             #binding-cells = <0>;
             mods = <(MOD_RSFT)>;
         };
+
+        under_super: under_super {
+            compatible = "zmk,behavior-mod-morph";
+            label = "UNDER_SUPER";
+            bindings = <&kp UNDERSCORE>, <&kp CARET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT)>;
+        };
+
+        minus_plus: minus_plus {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MINUS_PLUS";
+            bindings = <&kp KP_MINUS>, <&kp KP_PLUS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -152,12 +170,12 @@
 
         combo_fslash {
             bindings = <&kp KP_SLASH>;
-            key-positions = <32 31>;
+            key-positions = <8 19>;
         };
 
         combo_bslask {
             bindings = <&kp BACKSLASH>;
-            key-positions = <32 33>;
+            key-positions = <8 21>;
         };
 
         r_brack {
@@ -196,12 +214,12 @@
         };
 
         reference {
-            bindings = <&kp KP_MINUS>;
+            bindings = <&minus_plus>;
             key-positions = <17 18>;
         };
 
         pointer {
-            bindings = <&kp UNDERSCORE>;
+            bindings = <&under_super>;
             key-positions = <29 30>;
         };
     };

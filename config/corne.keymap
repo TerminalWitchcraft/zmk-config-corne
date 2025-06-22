@@ -158,6 +158,15 @@
             #binding-cells = <0>;
             mods = <(MOD_RSFT)>;
         };
+
+        at_percent: at_percent {
+            compatible = "zmk,behavior-mod-morph";
+            label = "AT_PERCENT";
+            bindings = <&kp AT_SIGN>, <&kp PERCENT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -238,7 +247,7 @@
         };
 
         combo_at_percent {
-            bindings = <&none>;
+            bindings = <&at_percent>;
             key-positions = <2 3>;
         };
     };

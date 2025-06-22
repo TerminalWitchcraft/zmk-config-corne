@@ -132,6 +132,11 @@
             bindings = <&kp BACKSLASH>;
             key-positions = <32 33>;
         };
+
+        test {
+            bindings = <&none>;
+            key-positions = <20 21>;
+        };
     };
 
     //

@@ -198,7 +198,7 @@
         comma_semi: comma_semi {
             compatible = "zmk,behavior-mod-morph";
             label = "COMMA_SEMI";
-            bindings = <&kp KP_COMMA>, <&kp SEMICOLON>;
+            bindings = <&kp COMMA>, <&kp SEMICOLON>;
 
             #binding-cells = <0>;
             mods = <(MOD_RSFT)>;

@@ -126,7 +126,7 @@
         equal_not: equal_not {
             compatible = "zmk,behavior-mod-morph";
             label = "EQUAL_NOT";
-            bindings = <&kp KP_EQUAL>, <&kp EXCLAMATION>;
+            bindings = <&kp EQUAL>, <&kp EXCLAMATION>;
 
             #binding-cells = <0>;
             mods = <(MOD_RSFT)>;

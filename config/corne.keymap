@@ -149,6 +149,15 @@
             #binding-cells = <0>;
             mods = <(MOD_RSFT)>;
         };
+
+        and_or: and_or {
+            compatible = "zmk,behavior-mod-morph";
+            label = "AND_OR";
+            bindings = <&kp AMPERSAND>, <&kp PIPE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -213,14 +222,24 @@
             key-positions = <5 6>;
         };
 
-        reference {
+        combo_minus {
             bindings = <&minus_plus>;
             key-positions = <17 18>;
         };
 
-        pointer {
+        combo_underscore {
             bindings = <&under_super>;
             key-positions = <29 30>;
+        };
+
+        combo_and_or {
+            bindings = <&and_or>;
+            key-positions = <15 14>;
+        };
+
+        combo_at_percent {
+            bindings = <&none>;
+            key-positions = <2 3>;
         };
     };
 

@@ -292,27 +292,27 @@
 
         equality {
             bindings = <&equal_not>;
-            key-positions = <5 6>;
+            key-positions = <8 9>;
         };
 
         combo_minus {
             bindings = <&minus_plus>;
-            key-positions = <17 18>;
+            key-positions = <20 21>;
         };
 
         combo_underscore {
             bindings = <&under_super>;
-            key-positions = <29 30>;
+            key-positions = <33 32>;
         };
 
         combo_and_or {
             bindings = <&and_or>;
-            key-positions = <2 3>;
+            key-positions = <14 15>;
         };
 
         combo_at_percent {
             bindings = <&at_percent>;
-            key-positions = <14 15>;
+            key-positions = <2 3>;
         };
 
         combo_hash_dollar {

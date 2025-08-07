@@ -11,99 +11,11 @@
 
 / {
     behaviors {
-        para: para {
-            compatible = "zmk,behavior-tap-dance";
-            label = "PARA";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
-        };
-
         caps: caps {
             compatible = "zmk,behavior-caps-word";
             label = "CAPS";
             #binding-cells = <0>;
             continue-list = <MINUS BACKSPACE>;
-        };
-
-        paraless: paraless {
-            compatible = "zmk,behavior-mod-morph";
-            label = "PARALESS";
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        paragreat: paragreat {
-            compatible = "zmk,behavior-mod-morph";
-            label = "PARAGREAT";
-            bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        hml: hrm_left {
-            compatible = "zmk,behavior-hold-tap";
-            label = "hrm_left";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            require-prior-idle-ms = <175>;
-            flavor = "balanced";
-            tapping-term-ms = <300>;
-            quick-tap-ms = <175>;
-            hold-trigger-on-release;
-            hold-trigger-key-positions = <7 18 19 19 20 21 22 31 32 33 34 41 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 40 41 39 36 37 38>;
-        };
-
-        hmr: hrm_right {
-            compatible = "zmk,behavior-hold-tap";
-            label = "hrm_right";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            require-prior-idle-ms = <175>;
-            flavor = "balanced";
-            tapping-term-ms = <300>;
-            quick-tap-ms = <175>;
-            hold-trigger-on-release;
-            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
-        };
-
-        lt_bkspace: lt_bkspace {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LT_BKSPACE";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <280>;
-            quick-tap-ms = <150>;
-            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
-        };
-
-        sk_custom: sk_custom {
-            compatible = "zmk,behavior-sticky-key";
-            label = "SK_CUSTOM";
-            bindings = <&sk>;
-            #binding-cells = <1>;
-            quick-release;
-            release-after-ms = <280>;
-            ignore-modifiers;
-        };
-
-        shift_tab: shift_tab {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SHIFT_TAB";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            require-prior-idle-ms = <175>;
-            flavor = "balanced";
-            tapping-term-ms = <300>;
-            quick-tap-ms = <175>;
-            hold-trigger-on-release;
         };
 
         angle_great: angle_great {
@@ -228,6 +140,19 @@
             label = "CAPS_SHIFT";
             #binding-cells = <0>;
             bindings = <&sk RIGHT_SHIFT>, <&caps_word>;
+
+            tapping-term-ms = <280>;
+        };
+
+        backspace: backspace {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BACKSPACE";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <230>;
+            flavor = "tap-unless-interrupted";
         };
     };
 
@@ -348,10 +273,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&none  &kp W  &kp L  &kp Y       &kp P        &kp B               &kp Z        &kp F                &kp O                &kp U        &double_quote_single  &mo 4
-&caps  &kp C  &kp R  &kp S       &kp T        &kp G               &kp M        &kp N                &kp E                &kp I        &kp A                 &none
-&mo 2  &kp Q  &kp J  &kp V       &kp D        &kp K               &kp X        &kp H                &dot_colon           &comma_semi  &question_exclaim     &to 3
-                     &kp ESCAPE  &lt 1 SPACE  &mt LEFT_ALT TAB    &caps_shift  &mt RCTRL BACKSPACE  &mt RIGHT_GUI ENTER
+&none  &kp W  &kp L  &kp Y       &kp P        &kp B               &kp Z        &kp F                       &kp O                &kp U        &double_quote_single  &mo 4
+&caps  &kp C  &kp R  &kp S       &kp T        &kp G               &kp M        &kp N                       &kp E                &kp I        &kp A                 &none
+&mo 2  &kp Q  &kp J  &kp V       &kp D        &kp K               &kp X        &kp H                       &dot_colon           &comma_semi  &question_exclaim     &to 3
+                     &kp ESCAPE  &lt 1 SPACE  &mt LEFT_ALT TAB    &caps_shift  &backspace RCTRL BACKSPACE  &mt RIGHT_GUI ENTER
             >;
         };
 

@@ -175,7 +175,7 @@
             bindings = <&kp KP_DIVIDE>, <&kp KP_ASTERISK>;
 
             #binding-cells = <0>;
-            mods = <(MOD_RSFT)>;
+            mods = <(MOD_LSFT)>;
         };
 
         hash_dollar: hash_dollar {
@@ -193,7 +193,7 @@
             bindings = <&kp KP_DOT>, <&kp COLON>;
 
             #binding-cells = <0>;
-            mods = <(MOD_RSFT)>;
+            mods = <(MOD_LSFT)>;
         };
 
         comma_semi: comma_semi {
@@ -202,35 +202,16 @@
             bindings = <&kp COMMA>, <&kp SEMICOLON>;
 
             #binding-cells = <0>;
-            mods = <(MOD_RSFT)>;
+            mods = <(MOD_LSFT)>;
         };
 
-        question_grave: question_grave {
+        question_exclaim: question_exclaim {
             compatible = "zmk,behavior-mod-morph";
-            label = "QUESTION_GRAVE";
-            bindings = <&kp QUESTION>, <&kp GRAVE>;
+            label = "QUESTION_EXCLAIM";
+            bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
 
             #binding-cells = <0>;
-            mods = <(MOD_RSFT)>;
-        };
-
-        escape_hatch: escape_hatch {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ESCAPE_HATCH";
-            #binding-cells = <0>;
-            bindings = <&kp ESCAPE>, <&to 0>;
-        };
-
-        sticky_shift: sticky_shift {
-            compatible = "zmk,behavior-hold-tap";
-            label = "STICKY_SHIFT";
-            bindings = <&kp>, <&sk_custom>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-            flavor = "tap-preferred";
+            mods = <(MOD_LSFT)>;
         };
     };
 
@@ -316,12 +297,12 @@
         };
 
         combo_and_or {
-            bindings = <&and_or>;
+            bindings = <&at_percent>;
             key-positions = <14 15>;
         };
 
         combo_at_percent {
-            bindings = <&at_percent>;
+            bindings = <&and_or>;
             key-positions = <2 3>;
         };
 
@@ -330,15 +311,9 @@
             key-positions = <26 27>;
         };
 
-        home {
-            bindings = <&kp TILDE>;
-            key-positions = <16 19>;
-        };
-
-        nav {
-            bindings = <&to 0>;
-            key-positions = <38 39>;
-            layers = <0>;
+        grave_tidle {
+            bindings = <&kp GRAVE>;
+            key-positions = <3 16>;
         };
     };
 
@@ -357,9 +332,9 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp K_MUTE  &kp W  &kp L                &kp Y            &kp P            &kp B             &kp Z      &kp F              &kp O             &kp U                 &kp SQT          &kp C_VOLUME_UP
-&caps       &kp C  &hml LEFT_CONTROL R  &hml LEFT_ALT S  &hml LEFT_GUI T  &kp G             &kp M      &hmr RIGHT_META N  &hmr RIGHT_ALT E  &hmr RIGHT_CONTROL I  &kp A            &kp C_VOLUME_DOWN
-&mo 4       &kp Q  &kp J                &kp V            &kp D            &kp K             &kp X      &kp H              &dot_colon        &comma_semi           &question_grave  &to 3
+&kp K_MUTE  &kp W  &kp L                &kp Y            &kp P            &kp B             &kp Z      &kp F              &kp O             &kp U                 &kp SQT            &kp C_VOLUME_UP
+&caps       &kp C  &hml LEFT_CONTROL R  &hml LEFT_ALT S  &hml LEFT_GUI T  &kp G             &kp M      &hmr RIGHT_META N  &hmr RIGHT_ALT E  &hmr RIGHT_CONTROL I  &kp A              &kp C_VOLUME_DOWN
+&mo 4       &kp Q  &kp J                &kp V            &kp D            &kp K             &kp X      &kp H              &dot_colon        &comma_semi           &question_exclaim  &to 3
                                         &kp ESCAPE       &lt 1 SPACE      &sk LEFT_SHIFT    &lt 2 TAB  &lt 1 BACKSPACE    &kp ENTER
             >;
         };

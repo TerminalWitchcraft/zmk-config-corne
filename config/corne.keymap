@@ -139,7 +139,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "CAPS_SHIFT";
             #binding-cells = <0>;
-            bindings = <&sk RIGHT_SHIFT>, <&caps_word>;
+            bindings = <&caps_sticky RIGHT_SHIFT>, <&caps_word>;
 
             tapping-term-ms = <280>;
         };
@@ -164,6 +164,14 @@
             tapping-term-ms = <280>;
             quick-tap-ms = <230>;
             flavor = "balanced";
+        };
+
+        caps_sticky: caps_sticky {
+            compatible = "zmk,behavior-sticky-key";
+            label = "CAPS_STICKY";
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            release-after-ms = <5000>;
         };
     };
 

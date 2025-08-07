@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define DEF 0
 #define NAV 1
@@ -358,7 +359,7 @@
             bindings = <
 &kp K_MUTE  &kp W  &kp L                &kp Y            &kp P            &kp B             &kp Z      &kp F              &kp O             &kp U                 &kp SQT          &kp C_VOLUME_UP
 &caps       &kp C  &hml LEFT_CONTROL R  &hml LEFT_ALT S  &hml LEFT_GUI T  &kp G             &kp M      &hmr RIGHT_META N  &hmr RIGHT_ALT E  &hmr RIGHT_CONTROL I  &kp A            &kp C_VOLUME_DOWN
-&mo 3       &kp Q  &kp J                &kp V            &kp D            &kp K             &kp X      &kp H              &dot_colon        &comma_semi           &question_grave  &to 2
+&mo 4       &kp Q  &kp J                &kp V            &kp D            &kp K             &kp X      &kp H              &dot_colon        &comma_semi           &question_grave  &to 3
                                         &kp ESCAPE       &lt 0 SPACE      &sk LEFT_SHIFT    &lt 0 TAB  &kp BACKSPACE      &kp ENTER
             >;
         };
@@ -374,13 +375,24 @@
             label = "nav";
         };
 
+        mouse {
+            bindings = <
+&trans  &trans  &trans          &mmv MOVE_UP    &trans           &trans       &trans  &trans          &msc SCRL_UP    &trans           &trans  &trans
+&trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans       &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans          &trans          &trans           &trans       &trans  &trans          &trans          &trans           &trans  &trans
+                                &mkp MCLK       &mkp LCLK        &mkp RCLK    &trans  &trans          &trans
+            >;
+
+            label = "mouse";
+        };
+
         qwerty {
             display-name = "fallback";
             bindings = <
 &kp TAB    &kp Q  &kp W  &kp E    &kp R  &kp T         &kp Y    &kp U            &kp I      &kp O    &kp P     &kp BACKSPACE
 &kp LSHFT  &kp A  &kp S  &kp D    &kp F  &kp G         &kp H    &kp J            &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LCTRL  &kp Z  &kp X  &kp C    &kp V  &kp B         &kp N    &kp M            &kp COMMA  &kp DOT  &kp FSLH  &to 0
-                         &kp TAB  &mo 0  &kp ESCAPE    &kp RET  &lt 3 BACKSPACE  &kp DEL
+                         &kp TAB  &mo 0  &kp ESCAPE    &kp RET  &lt 4 BACKSPACE  &kp DEL
             >;
         };
 

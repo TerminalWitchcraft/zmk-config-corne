@@ -196,76 +196,91 @@
         combo_fslash {
             bindings = <&div_mul>;
             key-positions = <8 19>;
+            timeout-ms = <60>;
         };
 
         combo_bslask {
             bindings = <&kp BACKSLASH>;
             key-positions = <8 21>;
+            timeout-ms = <60>;
         };
 
         r_brack {
             bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <16 15>;
+            timeout-ms = <60>;
         };
 
         r_brack_l {
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <19 20>;
+            timeout-ms = <60>;
         };
 
         a_brack {
             bindings = <&angle_less>;
             key-positions = <27 28>;
+            timeout-ms = <60>;
         };
 
         a_brack_l {
             bindings = <&angle_great>;
             key-positions = <31 32>;
+            timeout-ms = <60>;
         };
 
         c_bracket {
             bindings = <&kp LEFT_BRACE>;
             key-positions = <3 4>;
+            timeout-ms = <60>;
         };
 
         c_brack_l {
             bindings = <&kp RIGHT_BRACE>;
             key-positions = <7 8>;
+            timeout-ms = <60>;
         };
 
         equality {
             bindings = <&equal_not>;
             key-positions = <8 9>;
+            timeout-ms = <60>;
         };
 
         combo_minus {
             bindings = <&minus_plus>;
             key-positions = <20 21>;
+            timeout-ms = <60>;
         };
 
         combo_underscore {
             bindings = <&under_super>;
             key-positions = <33 32>;
+            timeout-ms = <60>;
         };
 
         combo_and_or {
             bindings = <&at_percent>;
             key-positions = <14 15>;
+            timeout-ms = <60>;
         };
 
         combo_at_percent {
             bindings = <&and_or>;
             key-positions = <2 3>;
+            timeout-ms = <60>;
         };
 
         combo_hash_dollar {
             bindings = <&hash_dollar>;
             key-positions = <26 27>;
+            timeout-ms = <60>;
         };
 
         grave_tidle {
             bindings = <&kp GRAVE>;
             key-positions = <3 16>;
+            timeout-ms = <60>;
         };
     };
 

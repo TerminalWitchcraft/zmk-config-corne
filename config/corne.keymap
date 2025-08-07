@@ -234,16 +234,25 @@
     };
 
     macros {
-        browsertab: browsertab {
+        vim_save: vim_save {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp TAB>,
-                <&macro_release>,
-                <&kp LCTRL>;
+            bindings = <&kp COLON &kp W>;
+            label = "VIM_SAVE";
+        };
+
+        vim_save_exit: vim_save_exit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COLON &kp LS(Z) &kp LS(Z)>;
+            label = "VIM_SAVE_EXIT";
+        };
+
+        vim_exit_wo_save: vim_exit_wo_save {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COLON &kp LS(Z) &kp LS(Q)>;
+            label = "VIM_EXIT_WO_SAVE";
         };
     };
 
@@ -326,7 +335,7 @@
         };
 
         nav {
-            bindings = <&to 2>;
+            bindings = <&to 0>;
             key-positions = <38 39>;
             layers = <0>;
         };
@@ -347,10 +356,19 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp K_MUTE  &kp W  &kp L                &kp Y            &kp P            &kp B            &kp Z        &kp F              &kp O                                  &kp U                 &kp SQT          &kp C_VOLUME_UP
-&caps       &kp C  &hml LEFT_CONTROL R  &hml LEFT_ALT S  &hml LEFT_GUI T  &kp G            &kp M        &hmr RIGHT_META N  &hmr RIGHT_ALT E                       &hmr RIGHT_CONTROL I  &kp A            &kp C_VOLUME_DOWN
-&mo 4       &kp Q  &kp J                &kp V            &kp D            &kp K            &kp X        &kp H              &dot_colon                             &comma_semi           &question_grave  &to 3
-                                        &kp TAB          &lt 1 SPACE      &escape_hatch    &lt 2 ENTER  &kp BACKSPACE      &sticky_shift RIGHT_SHIFT RIGHT_SHIFT
+&kp K_MUTE  &kp W  &kp L                &kp Y            &kp P            &kp B             &kp Z      &kp F              &kp O             &kp U                 &kp SQT          &kp C_VOLUME_UP
+&caps       &kp C  &hml LEFT_CONTROL R  &hml LEFT_ALT S  &hml LEFT_GUI T  &kp G             &kp M      &hmr RIGHT_META N  &hmr RIGHT_ALT E  &hmr RIGHT_CONTROL I  &kp A            &kp C_VOLUME_DOWN
+&mo 4       &kp Q  &kp J                &kp V            &kp D            &kp K             &kp X      &kp H              &dot_colon        &comma_semi           &question_grave  &to 3
+                                        &kp ESCAPE       &lt 2 SPACE      &sk LEFT_SHIFT    &lt 0 TAB  &kp BACKSPACE      &kp ENTER
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&trans  &trans          &kp LC(U)     &kp LC(D)      &kp LC(P)  &trans       &vim_save_exit     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &sk RIGHT_GUI      &trans
+&trans  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN       &kp RIGHT  &trans       &kp KP_NUMBER_0    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &sk RIGHT_ALT      &trans
+&trans  &trans          &kp PAGE_UP   &kp PAGE_DOWN  &kp LC(N)  &vim_save    &vim_exit_wo_save  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &sk RIGHT_CONTROL  &trans
+                                      &trans         &trans     &trans       &trans             &trans           &trans
             >;
         };
 
@@ -373,32 +391,13 @@
             label = "SYM";
         };
 
-        NAVNUM {
-            display-name = "Nav";
-
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
-
-            bindings = <
-&trans  &trans  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans             &kp INS      &kp K_UNDO      &kp LC(N)      &kp LC(P)     &kp K_REDO  &trans
-&trans  &trans  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_NUMBER_0    &kp K_COPY   &kp LEFT_ARROW  &kp DOWN       &kp UP_ARROW  &kp RIGHT   &trans
-&trans  &trans  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans             &kp K_PASTE  &kp HOME        &kp PAGE_DOWN  &kp PAGE_UP   &kp END     &trans
-                                 &trans           &trans           &trans             &trans       &trans          &trans
-            >;
-
-            label = "NAVNUM";
-        };
-
         qwerty {
             display-name = "fallback";
             bindings = <
 &kp TAB    &kp Q  &kp W  &kp E    &kp R  &kp T         &kp Y    &kp U            &kp I      &kp O    &kp P     &kp BACKSPACE
 &kp LSHFT  &kp A  &kp S  &kp D    &kp F  &kp G         &kp H    &kp J            &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LCTRL  &kp Z  &kp X  &kp C    &kp V  &kp B         &kp N    &kp M            &kp COMMA  &kp DOT  &kp FSLH  &to 0
-                         &kp TAB  &mo 1  &kp ESCAPE    &kp RET  &lt 4 BACKSPACE  &kp DEL
+                         &kp TAB  &mo 2  &kp ESCAPE    &kp RET  &lt 4 BACKSPACE  &kp DEL
             >;
         };
 

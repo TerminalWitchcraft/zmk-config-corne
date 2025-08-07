@@ -112,7 +112,7 @@
             bindings = <&kp GREATER_THAN>, <&kp RIGHT_BRACKET>;
 
             #binding-cells = <0>;
-            mods = <(MOD_RSFT)>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
         };
 
         angle_less: angle_less {
@@ -121,7 +121,7 @@
             bindings = <&kp LESS_THAN>, <&kp LEFT_BRACKET>;
 
             #binding-cells = <0>;
-            mods = <(MOD_RSFT)>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
         };
 
         equal_not: equal_not {
@@ -130,7 +130,7 @@
             bindings = <&kp EQUAL>, <&kp EXCLAMATION>;
 
             #binding-cells = <0>;
-            mods = <(MOD_RSFT)>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
         };
 
         under_super: under_super {
@@ -139,7 +139,7 @@
             bindings = <&kp UNDERSCORE>, <&kp CARET>;
 
             #binding-cells = <0>;
-            mods = <(MOD_RSFT)>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
         };
 
         minus_plus: minus_plus {
@@ -148,7 +148,7 @@
             bindings = <&kp KP_MINUS>, <&kp KP_PLUS>;
 
             #binding-cells = <0>;
-            mods = <(MOD_RSFT)>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
         };
 
         and_or: and_or {
@@ -157,7 +157,7 @@
             bindings = <&kp AMPERSAND>, <&kp PIPE>;
 
             #binding-cells = <0>;
-            mods = <(MOD_RSFT)>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
         };
 
         at_percent: at_percent {
@@ -166,7 +166,7 @@
             bindings = <&kp AT_SIGN>, <&kp PERCENT>;
 
             #binding-cells = <0>;
-            mods = <(MOD_RSFT)>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
         };
 
         div_mul: div_mul {
@@ -175,7 +175,7 @@
             bindings = <&kp KP_DIVIDE>, <&kp KP_ASTERISK>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         hash_dollar: hash_dollar {
@@ -184,7 +184,7 @@
             bindings = <&kp POUND>, <&kp DOLLAR>;
 
             #binding-cells = <0>;
-            mods = <(MOD_RSFT)>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
         };
 
         dot_colon: dot_colon {
@@ -193,7 +193,7 @@
             bindings = <&kp KP_DOT>, <&kp COLON>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         comma_semi: comma_semi {
@@ -202,7 +202,7 @@
             bindings = <&kp COMMA>, <&kp SEMICOLON>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         question_exclaim: question_exclaim {
@@ -211,7 +211,7 @@
             bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         double_quote_single: double_quote_single {
@@ -220,14 +220,14 @@
             bindings = <&kp DOUBLE_QUOTES>, <&kp SINGLE_QUOTE>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         caps_shift: caps_shift {
             compatible = "zmk,behavior-tap-dance";
             label = "CAPS_SHIFT";
             #binding-cells = <0>;
-            bindings = <&sk LEFT_SHIFT>, <&caps_word>;
+            bindings = <&sk RIGHT_SHIFT>, <&caps_word>;
         };
     };
 

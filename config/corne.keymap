@@ -154,6 +154,17 @@
             quick-tap-ms = <230>;
             flavor = "tap-unless-interrupted";
         };
+
+        space: space {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SPACE";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <230>;
+            flavor = "tap-unless-interrupted";
+        };
     };
 
     macros {
@@ -273,10 +284,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&none  &kp W  &kp L  &kp Y       &kp P        &kp B               &kp Z        &kp F                       &kp O                &kp U        &double_quote_single  &mo 4
-&caps  &kp C  &kp R  &kp S       &kp T        &kp G               &kp M        &kp N                       &kp E                &kp I        &kp A                 &none
-&mo 2  &kp Q  &kp J  &kp V       &kp D        &kp K               &kp X        &kp H                       &dot_colon           &comma_semi  &question_exclaim     &to 3
-                     &kp ESCAPE  &lt 1 SPACE  &mt LEFT_ALT TAB    &caps_shift  &backspace RCTRL BACKSPACE  &mt RIGHT_GUI ENTER
+&none  &kp W  &kp L  &kp Y       &kp P           &kp B               &kp Z        &kp F                       &kp O                &kp U        &double_quote_single  &mo 4
+&caps  &kp C  &kp R  &kp S       &kp T           &kp G               &kp M        &kp N                       &kp E                &kp I        &kp A                 &none
+&mo 2  &kp Q  &kp J  &kp V       &kp D           &kp K               &kp X        &kp H                       &dot_colon           &comma_semi  &question_exclaim     &to 3
+                     &kp ESCAPE  &space 1 SPACE  &mt LEFT_ALT TAB    &caps_shift  &backspace RCTRL BACKSPACE  &mt RIGHT_GUI ENTER
             >;
         };
 

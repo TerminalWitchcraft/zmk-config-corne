@@ -219,21 +219,21 @@
         vim_save: vim_save {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp COLON &kp W>;
+            bindings = <&kp COLON &kp W &kp ENTER>;
             label = "VIM_SAVE";
         };
 
         vim_save_exit: vim_save_exit {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp COLON &kp LS(Z) &kp LS(Z)>;
+            bindings = <&kp COLON &kp W &kp Q &kp A &kp ENTER>;
             label = "VIM_SAVE_EXIT";
         };
 
         vim_exit_wo_save: vim_exit_wo_save {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp COLON &kp LS(Z) &kp LS(Q)>;
+            bindings = <&kp LS(Z) &kp LS(Q)>;
             label = "VIM_EXIT_WO_SAVE";
         };
     };
